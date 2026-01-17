@@ -1,5 +1,4 @@
 
-
 import React, { useState, useEffect, useRef, useLayoutEffect, useMemo, useCallback } from 'react';
 import { useOS } from '../context/OSContext';
 import { DB, ScheduledMessage } from '../utils/db';
@@ -154,7 +153,7 @@ const MessageItem = React.memo(({ msg: m, isFirstInGroup, isLastInGroup, activeT
             <div className="w-64 bg-gradient-to-br from-amber-400 to-orange-500 rounded-2xl p-4 text-white shadow-lg relative overflow-hidden group active:scale-[0.98] transition-transform">
                     <div className="absolute top-0 right-0 p-4 opacity-20"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-12 h-12"><path d="M10.464 8.746c.227-.18.497-.311.786-.394v2.795a2.252 2.252 0 0 1-.786-.393c-.394-.313-.546-.681-.546-1.004 0-.324.152-.691.546-1.004ZM12.75 15.662v-2.824c.347.085.664.228.921.421.427.32.579.686.579.991 0 .305-.152.671-.579.991a2.534 2.534 0 0 1-.921.42Z" /><path fillRule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25ZM12.75 6a.75.75 0 0 0-1.5 0v.816a3.836 3.836 0 0 0-1.72.756c-.712.566-1.112 1.35-1.112 2.178 0 .829.4 1.612 1.113 2.178.502.4 1.102.647 1.719.756v2.978a2.536 2.536 0 0 1-.921-.421l-.879-.66a.75.75 0 0 0-.9 1.2l.879.66c.533.4 1.169.645 1.821.75V18a.75.75 0 0 0 1.5 0v-.81a4.124 4.124 0 0 0 1.821-.749c.745-.559 1.179-1.344 1.179-2.191 0-.847-.434-1.632-1.179-2.191a4.122 4.122 0 0 0-1.821-.75V8.354c.29.082.559.213.786.393l.415.33a.75.75 0 0 0 .933-1.175l-.415-.33a3.836 3.836 0 0 0-1.719-.755V6Z" clipRule="evenodd" /><path d="M2.25 18a.75.75 0 0 0 0 1.5c5.4 0 10.63.722 15.6 2.075 1.19.324 2.4-.558 2.4-1.82V18.75a.75.75 0 0 0-.75-.75H2.25Z" /></svg></div>
                     <div className="flex items-center gap-3 mb-2">
-                        <div className="p-2 bg-white/20 rounded-full"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5"><path d="M12 7.5a2.25 2.25 0 1 0 0 4.5 2.25 2.25 0 0 0 0-4.5Z" /><path fillRule="evenodd" d="M1.5 4.875C1.5 3.839 2.34 3 3.375 3h17.25c1.035 0 1.875.84 1.875 1.875v9.75c0 1.036-.84 1.875-1.875 1.875H3.375A1.875 1.875 0 0 1 1.5 14.625v-9.75ZM8.25 9.75a3.75 3.75 0 1 1 7.5 0 3.75 3.75 0 0 1-7.5 0ZM18.75 9a.75.75 0 0 0-.75.75v.008c0 .414.336.75.75.75h.008a.75.75 0 0 0 .75-.75V9.75a.75.75 0 0 0-.75-.75h-.008ZM4.5 9.75A.75.75 0 0 1 5.25 9h.008a.75.75 0 0 1 .75.75v.008a.75.75 0 0 1-.75.75H5.25a.75.75 0 0 1-.75-.75V9.75Z" clipRule="evenodd" /><path d="M2.25 18a.75.75 0 0 0 0 1.5c5.4 0 10.63.722 15.6 2.075 1.19.324 2.4-.558 2.4-1.82V18.75a.75.75 0 0 0-.75-.75H2.25Z" /></svg></div>
+                        <div className="p-2 bg-white/20 rounded-full"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5"><path d="M12 7.5a2.25 2.25 0 1 0 0 4.5 2.25 2.25 0 0 0 0-4.5Z" /><path fillRule="evenodd" d="M1.5 4.875C1.5 3.839 2.34 3 3.375 3h17.25c1.035 0 1.875.84 1.875 1.875v9.75c0 1.036-.84 1.875-1.875 1.875H3.375A1.875 1.875 0 0 1 1.5 14.625v-9.75ZM8.25 9.75a3.75 3.75 0 1 1 7.5 0 3.75 3.75 0 0 1-7.5 0ZM18.75 9a.75.75 0 0 0-.75.75v.008c0 .414.336.75.75.75h.008a.75.75 0 0 0 .75-.75V9.75a.75.75 0 0 0-.75-.75h-.008ZM4.5 9.75A.75.75 0 0 1 5.25 9h.008a.75.75 0 0 1 .75.75v.008a.75.75 0 0 1-.75-.75H5.25a.75.75 0 0 1-.75-.75V9.75Z" clipRule="evenodd" /><path d="M2.25 18a.75.75 0 0 0 0 1.5c5.4 0 10.63.722 15.6 2.075 1.19.324 2.4-.558 2.4-1.82V18.75a.75.75 0 0 0-.75-.75H2.25Z" /></svg></div>
                         <span className="font-medium text-white/90">Sully Pay</span>
                     </div>
                     <div className="text-2xl font-bold tracking-tight mb-1">₩ {m.metadata?.amount}</div>
@@ -287,14 +286,11 @@ const MessageItem = React.memo(({ msg: m, isFirstInGroup, isLastInGroup, activeT
         </div>
     );
 }, (prev, next) => {
-    // Deep compare needed for activeTheme because the object reference in ThemeMaker might stay same but content differs, 
-    // or different reference but same content. Actually, simply checking if specific fields changed is better.
-    // For simplicity given the complexity of the theme object, we do a shallow check on the message and specific theme props.
     return prev.msg.id === next.msg.id && 
            prev.msg.content === next.msg.content &&
            prev.isFirstInGroup === next.isFirstInGroup &&
            prev.isLastInGroup === next.isLastInGroup &&
-           prev.activeTheme === next.activeTheme; // This relies on activeTheme being immutable-ish or updated via state
+           prev.activeTheme === next.activeTheme;
 });
 
 
@@ -314,7 +310,6 @@ const Chat: React.FC = () => {
     // Stats
     const [lastTokenUsage, setLastTokenUsage] = useState<number | null>(null);
 
-    // ... (State declarations same as before) ...
     const [modalType, setModalType] = useState<'none' | 'transfer' | 'emoji-import' | 'chat-settings' | 'message-options' | 'edit-message' | 'delete-emoji'>('none');
     const [transferAmt, setTransferAmt] = useState('');
     const [emojiImportText, setEmojiImportText] = useState('');
@@ -359,20 +354,6 @@ const Chat: React.FC = () => {
         else localStorage.removeItem(draftKey);
     };
 
-    const handleChatImageSelect = async (e: React.ChangeEvent<HTMLInputElement>) => {
-        const file = e.target.files?.[0];
-        if (!file) return;
-        try {
-            const base64 = await processImage(file);
-            setShowPanel('none');
-            await handleSendText(base64, 'image');
-        } catch (err: any) {
-            addToast(err.message || '图片处理失败', 'error');
-        } finally {
-            if (chatImageInputRef.current) chatImageInputRef.current.value = '';
-        }
-    };
-
     useLayoutEffect(() => {
         if (scrollRef.current) {
             scrollRef.current.scrollTop = scrollRef.current.scrollHeight;
@@ -385,254 +366,6 @@ const Chat: React.FC = () => {
         }
     }, [messages, isTyping, recallStatus]);
 
-    // ... (Event Handlers for Message Long Press, Edit, Delete, etc. kept same) ...
-    const handleTouchStart = (item: Message | {name: string, url: string}, type: 'message' | 'emoji') => {
-        longPressTimer.current = setTimeout(() => {
-            if (type === 'message') {
-                setSelectedMessage(item as Message);
-                setModalType('message-options');
-            } else {
-                setSelectedEmoji(item as any);
-                setModalType('delete-emoji');
-            }
-        }, 600);
-    };
-
-    const handleTouchEnd = () => {
-        if (longPressTimer.current) {
-            clearTimeout(longPressTimer.current);
-            longPressTimer.current = null;
-        }
-    };
-
-    const handleDeleteMessage = async () => {
-        if (!selectedMessage) return;
-        await DB.deleteMessage(selectedMessage.id);
-        setMessages(prev => prev.filter(m => m.id !== selectedMessage.id));
-        setModalType('none');
-        setSelectedMessage(null);
-        addToast('消息已删除', 'success');
-    };
-    
-    const handleDeleteEmoji = async () => {
-        if (!selectedEmoji) return;
-        await DB.deleteEmoji(selectedEmoji.name);
-        setEmojis(prev => prev.filter(e => e.name !== selectedEmoji.name));
-        setModalType('none');
-        setSelectedEmoji(null);
-        addToast('表情包已删除', 'success');
-    };
-
-    const handleEditMessage = () => {
-        if (!selectedMessage) return;
-        setEditContent(selectedMessage.content);
-        setModalType('edit-message');
-    };
-
-    const confirmEditMessage = async () => {
-        if (!selectedMessage) return;
-        await DB.updateMessage(selectedMessage.id, editContent);
-        setMessages(prev => prev.map(m => m.id === selectedMessage.id ? { ...m, content: editContent } : m));
-        setModalType('none');
-        setSelectedMessage(null);
-        addToast('消息已修改', 'success');
-    };
-
-    const handleClearHistory = async () => {
-        if (!char) return;
-        if (preserveContext) {
-            const toDelete = messages.slice(0, -10);
-            if (toDelete.length === 0) {
-                addToast('消息太少，无需清理', 'info');
-                return;
-            }
-            await DB.deleteMessages(toDelete.map(m => m.id));
-            setMessages(messages.slice(-10));
-            addToast(`已清理 ${toDelete.length} 条历史，保留最近10条`, 'success');
-        } else {
-            await DB.clearMessages(char.id);
-            setMessages([]);
-            addToast('已清空 (包含见面记录)', 'success');
-        }
-        setModalType('none');
-    };
-
-    const handleReroll = async () => {
-        if (isTyping || messages.length === 0) return;
-        
-        const lastMsg = messages[messages.length - 1];
-        if (lastMsg.role !== 'assistant') return;
-
-        const toDeleteIds: number[] = [];
-        let index = messages.length - 1;
-        while (index >= 0 && messages[index].role === 'assistant') {
-            toDeleteIds.push(messages[index].id);
-            index--;
-        }
-
-        if (toDeleteIds.length === 0) return;
-
-        await DB.deleteMessages(toDeleteIds);
-        const newHistory = messages.slice(0, index + 1);
-        setMessages(newHistory);
-        addToast('回溯对话中...', 'info');
-
-        triggerAI(newHistory);
-    };
-
-    const handleFullArchive = async () => {
-        if (!apiConfig.apiKey || !char) {
-            addToast('请先配置 API Key', 'error');
-            return;
-        }
-        
-        const msgsByDate: Record<string, Message[]> = {};
-        messages.forEach(m => {
-            // FIX: Use local date construction to avoid UTC offset issues
-            const d = new Date(m.timestamp);
-            const year = d.getFullYear();
-            const month = String(d.getMonth() + 1).padStart(2, '0');
-            const day = String(d.getDate()).padStart(2, '0');
-            const dateStr = `${year}-${month}-${day}`;
-            
-            if (!msgsByDate[dateStr]) msgsByDate[dateStr] = [];
-            msgsByDate[dateStr].push(m);
-        });
-
-        const dates = Object.keys(msgsByDate).sort();
-        // REMOVED FILTER: Blindly process ALL dates present in logs
-        const datesToProcess = dates;
-
-        if (datesToProcess.length === 0) {
-            addToast('聊天记录为空，无法归档', 'info');
-            return;
-        }
-
-        setIsSummarizing(true);
-        setShowPanel('none');
-        
-        try {
-            let processedCount = 0;
-            const newMemories: MemoryFragment[] = [];
-
-            for (const dateStr of datesToProcess) {
-                const dayMsgs = msgsByDate[dateStr];
-                // Use formatTime which is local
-                const rawLog = dayMsgs.map(m => `[${formatTime(m.timestamp)}] ${m.role === 'user' ? userProfile.name : char.name}: ${m.type === 'image' ? '[Image]' : m.content}`).join('\n');
-                
-                // Enhanced Prompt for concise memory
-                const prompt = `系统: 你是 ${char.name}。
-用户: ${userProfile.name} (请直接称呼名字，严禁使用'User')。
-任务: 将 ${dateStr} 的聊天记录压缩为一条“核心记忆”。
-核心目的: 节省长期记忆Token，同时保留关键信息。
-要求:
-1. **第一人称** (“我”)。
-2. **极其简练**：用最少的字数把事情和互动重点说清楚。
-3. **微带情绪**：保留一点你的态度，但绝对不要写成冗长的日记。
-4. **语言**: 必须使用中文。
-日志:
-${rawLog.substring(0, 8000)}`;
-
-                const response = await fetch(`${apiConfig.baseUrl.replace(/\/+$/, '')}/chat/completions`, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${apiConfig.apiKey}` },
-                    body: JSON.stringify({
-                        model: apiConfig.model,
-                        messages: [{ role: "user", content: prompt }],
-                        temperature: 0.5,
-                        // FIX: Increased token limit for reasoning models
-                        max_tokens: 4000 
-                    })
-                });
-
-                if (!response.ok) throw new Error(`API Error on ${dateStr}`);
-                
-                const data = await response.json();
-                
-                // Fallback Logic for empty content (reasoning models sometimes cut off)
-                let summary = data.choices?.[0]?.message?.content || '';
-                
-                if (!summary && data.choices?.[0]?.message?.reasoning_content) {
-                     // If main content is empty but reasoning exists, try to salvage.
-                     // But ideally 4000 tokens fixes this.
-                     console.warn("Content empty, checking reasoning...");
-                }
-
-                summary = summary.trim();
-                summary = summary.replace(/^["']|["']$/g, ''); // Remove surrounding quotes
-
-                if (summary) {
-                    newMemories.push({
-                        id: `mem-${Date.now()}-${Math.random()}`,
-                        date: dateStr,
-                        summary: summary,
-                        mood: 'archive'
-                    });
-                    processedCount++;
-                } else {
-                    console.error(`Empty summary for ${dateStr}`);
-                }
-
-                await new Promise(r => setTimeout(r, 500));
-            }
-
-            const finalMemories = [...(char.memories || []), ...newMemories];
-            updateCharacter(char.id, { memories: finalMemories });
-            
-            if (processedCount > 0) {
-                addToast(`成功归档 ${processedCount} 天的记忆`, 'success');
-            } else {
-                addToast('归档完成，但没有生成有效内容', 'info');
-            }
-
-        } catch (e: any) {
-            addToast(`归档中断: ${e.message}`, 'error');
-        } finally {
-            setIsSummarizing(false);
-        }
-    };
-
-    const handleSendText = async (customContent?: string, customType?: MessageType, metadata?: any) => {
-        if (!char || (!input.trim() && !customContent)) return;
-        const text = customContent || input.trim();
-        const type = customType || 'text';
-
-        if (!customContent) { setInput(''); localStorage.removeItem(draftKey); }
-        
-        if (type === 'image') {
-            await DB.saveGalleryImage({
-                id: `img-${Date.now()}-${Math.random()}`,
-                charId: char.id,
-                url: text,
-                timestamp: Date.now()
-            });
-            addToast('图片已保存至相册', 'info');
-        }
-
-        await DB.saveMessage({ charId: char.id, role: 'user', type, content: text, metadata });
-        const updatedMsgs = await DB.getMessagesByCharId(char.id);
-        setMessages(updatedMsgs);
-        setShowPanel('none');
-    };
-
-    const handleBgUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
-        const file = e.target.files?.[0];
-        if(!file) return;
-        try {
-            const dataUrl = await processImage(file);
-            updateCharacter(char.id, { chatBackground: dataUrl });
-            addToast('聊天背景已更新', 'success');
-        } catch(err: any) {
-            addToast(err.message, 'error');
-        }
-    };
-
-    const saveSettings = () => {
-        updateCharacter(char.id, { contextLimit: settingsContextLimit });
-        setModalType('none');
-        addToast('设置已保存', 'success');
-    };
-
     const formatTime = (ts: number) => {
         return new Date(ts).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', hour12: false });
     };
@@ -641,7 +374,6 @@ ${rawLog.substring(0, 8000)}`;
         return `${d.getFullYear()}-${(d.getMonth()+1).toString().padStart(2,'0')}-${d.getDate().toString().padStart(2,'0')} ${d.getHours().toString().padStart(2,'0')}:${d.getMinutes().toString().padStart(2,'0')}`;
     };
 
-    // Keep this function for explicit [[RECALL]] requests from AI
     const getDetailedLogsForMonth = (year: string, month: string) => {
         if (!char.memories) return null;
         const target = `${year}-${month.padStart(2, '0')}`;
@@ -670,6 +402,8 @@ ${rawLog.substring(0, 8000)}`;
         const days = Math.floor(diffHours / 24);
         return `[系统提示: 距离上一条消息: ${days} 天。用户消失了很久。请根据你们的关系做出反应（想念、生气、担心或冷漠）。]`;
     };
+
+    // --- AI Logic ---
 
     const triggerAI = async (currentMsgs: Message[]) => {
         if (isTyping || !char) return;
@@ -705,6 +439,14 @@ ${rawLog.substring(0, 8000)}`;
    - 调取记忆: \`[[RECALL: YYYY-MM]]\`
    - **添加纪念日**: 如果你觉得今天是个值得纪念的日子（或者你们约定了某天），你可以**主动**将它添加到用户的日历中。单独起一行输出: \`[[ACTION:ADD_EVENT | 标题(Title) | YYYY-MM-DD]]\`。
    - **定时发送消息**: 如果你想在未来某个时间主动发消息（比如晚安、早安或提醒），请单独起一行输出: \`[schedule_message | YYYY-MM-DD HH:MM:SS | fixed | 消息内容]\`。`;
+
+            // INJECT SYSTEM NOTE IF SWITCHING FROM DATE MODE
+            // Check the message immediately preceding the latest one (which is the user's input).
+            // If that message was from Date mode, tell AI to switch back.
+            const previousMsg = currentMsgs.length > 1 ? currentMsgs[currentMsgs.length - 2] : null;
+            if (previousMsg && previousMsg.metadata?.source === 'date') {
+                baseSystemPrompt += `\n\n[System Note: You just finished a face-to-face meeting. You are now back on the phone. Switch back to texting style.]`;
+            }
 
             const limit = char.contextLimit || 500;
             const historySlice = currentMsgs.slice(-limit);
@@ -937,7 +679,268 @@ ${rawLog.substring(0, 8000)}`;
         }
     };
 
-    // ... (UI Render same as previous) ...
+    const handleChatImageSelect = async (e: React.ChangeEvent<HTMLInputElement>) => {
+        const file = e.target.files?.[0];
+        if (!file) return;
+        try {
+            const base64 = await processImage(file);
+            setShowPanel('none');
+            await handleSendText(base64, 'image');
+        } catch (err: any) {
+            addToast(err.message || '图片处理失败', 'error');
+        } finally {
+            if (chatImageInputRef.current) chatImageInputRef.current.value = '';
+        }
+    };
+
+    const handleTouchStart = (item: Message | {name: string, url: string}, type: 'message' | 'emoji') => {
+        longPressTimer.current = setTimeout(() => {
+            if (type === 'message') {
+                setSelectedMessage(item as Message);
+                setModalType('message-options');
+            } else {
+                setSelectedEmoji(item as any);
+                setModalType('delete-emoji');
+            }
+        }, 600);
+    };
+
+    const handleTouchEnd = () => {
+        if (longPressTimer.current) {
+            clearTimeout(longPressTimer.current);
+            longPressTimer.current = null;
+        }
+    };
+
+    const handleDeleteMessage = async () => {
+        if (!selectedMessage) return;
+        await DB.deleteMessage(selectedMessage.id);
+        setMessages(prev => prev.filter(m => m.id !== selectedMessage.id));
+        setModalType('none');
+        setSelectedMessage(null);
+        addToast('消息已删除', 'success');
+    };
+    
+    const handleDeleteEmoji = async () => {
+        if (!selectedEmoji) return;
+        await DB.deleteEmoji(selectedEmoji.name);
+        setEmojis(prev => prev.filter(e => e.name !== selectedEmoji.name));
+        setModalType('none');
+        setSelectedEmoji(null);
+        addToast('表情包已删除', 'success');
+    };
+
+    const handleEditMessage = () => {
+        if (!selectedMessage) return;
+        setEditContent(selectedMessage.content);
+        setModalType('edit-message');
+    };
+
+    const confirmEditMessage = async () => {
+        if (!selectedMessage) return;
+        await DB.updateMessage(selectedMessage.id, editContent);
+        setMessages(prev => prev.map(m => m.id === selectedMessage.id ? { ...m, content: editContent } : m));
+        setModalType('none');
+        setSelectedMessage(null);
+        addToast('消息已修改', 'success');
+    };
+
+    const handleClearHistory = async () => {
+        if (!char) return;
+        if (preserveContext) {
+            const toDelete = messages.slice(0, -10);
+            if (toDelete.length === 0) {
+                addToast('消息太少，无需清理', 'info');
+                return;
+            }
+            await DB.deleteMessages(toDelete.map(m => m.id));
+            setMessages(messages.slice(-10));
+            addToast(`已清理 ${toDelete.length} 条历史，保留最近10条`, 'success');
+        } else {
+            await DB.clearMessages(char.id);
+            setMessages([]);
+            addToast('已清空 (包含见面记录)', 'success');
+        }
+        setModalType('none');
+    };
+
+    const handleReroll = async () => {
+        if (isTyping || messages.length === 0) return;
+        
+        const lastMsg = messages[messages.length - 1];
+        if (lastMsg.role !== 'assistant') return;
+
+        const toDeleteIds: number[] = [];
+        let index = messages.length - 1;
+        while (index >= 0 && messages[index].role === 'assistant') {
+            toDeleteIds.push(messages[index].id);
+            index--;
+        }
+
+        if (toDeleteIds.length === 0) return;
+
+        await DB.deleteMessages(toDeleteIds);
+        const newHistory = messages.slice(0, index + 1);
+        setMessages(newHistory);
+        addToast('回溯对话中...', 'info');
+
+        triggerAI(newHistory);
+    };
+
+    const handleFullArchive = async () => {
+        if (!apiConfig.apiKey || !char) {
+            addToast('请先配置 API Key', 'error');
+            return;
+        }
+        
+        const msgsByDate: Record<string, Message[]> = {};
+        messages.forEach(m => {
+            // FIX: Use local date construction to avoid UTC offset issues
+            const d = new Date(m.timestamp);
+            const year = d.getFullYear();
+            const month = String(d.getMonth() + 1).padStart(2, '0');
+            const day = String(d.getDate()).padStart(2, '0');
+            const dateStr = `${year}-${month}-${day}`;
+            
+            if (!msgsByDate[dateStr]) msgsByDate[dateStr] = [];
+            msgsByDate[dateStr].push(m);
+        });
+
+        const dates = Object.keys(msgsByDate).sort();
+        // REMOVED FILTER: Blindly process ALL dates present in logs
+        const datesToProcess = dates;
+
+        if (datesToProcess.length === 0) {
+            addToast('聊天记录为空，无法归档', 'info');
+            return;
+        }
+
+        setIsSummarizing(true);
+        setShowPanel('none');
+        
+        try {
+            let processedCount = 0;
+            const newMemories: MemoryFragment[] = [];
+
+            for (const dateStr of datesToProcess) {
+                const dayMsgs = msgsByDate[dateStr];
+                // Use formatTime which is local
+                const rawLog = dayMsgs.map(m => `[${formatTime(m.timestamp)}] ${m.role === 'user' ? userProfile.name : char.name}: ${m.type === 'image' ? '[Image]' : m.content}`).join('\n');
+                
+                // Enhanced Prompt for concise memory
+                const prompt = `系统: 你是 ${char.name}。
+用户: ${userProfile.name} (请直接称呼名字，严禁使用'User')。
+任务: 将 ${dateStr} 的聊天记录压缩为一条“核心记忆”。
+核心目的: 节省长期记忆Token，同时保留关键信息。
+要求:
+1. **第一人称** (“我”)。
+2. **极其简练**：用最少的字数把事情和互动重点说清楚。
+3. **微带情绪**：保留一点你的态度，但绝对不要写成冗长的日记。
+4. **语言**: 必须使用中文。
+日志:
+${rawLog.substring(0, 8000)}`;
+
+                const response = await fetch(`${apiConfig.baseUrl.replace(/\/+$/, '')}/chat/completions`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${apiConfig.apiKey}` },
+                    body: JSON.stringify({
+                        model: apiConfig.model,
+                        messages: [{ role: "user", content: prompt }],
+                        temperature: 0.5,
+                        // FIX: Increased token limit for reasoning models
+                        max_tokens: 4000 
+                    })
+                });
+
+                if (!response.ok) throw new Error(`API Error on ${dateStr}`);
+                
+                const data = await response.json();
+                
+                // Fallback Logic for empty content (reasoning models sometimes cut off)
+                let summary = data.choices?.[0]?.message?.content || '';
+                
+                if (!summary && data.choices?.[0]?.message?.reasoning_content) {
+                     // If main content is empty but reasoning exists, try to salvage.
+                     // But ideally 4000 tokens fixes this.
+                     console.warn("Content empty, checking reasoning...");
+                }
+
+                summary = summary.trim();
+                summary = summary.replace(/^["']|["']$/g, ''); // Remove surrounding quotes
+
+                if (summary) {
+                    newMemories.push({
+                        id: `mem-${Date.now()}-${Math.random()}`,
+                        date: dateStr,
+                        summary: summary,
+                        mood: 'archive'
+                    });
+                    processedCount++;
+                } else {
+                    console.error(`Empty summary for ${dateStr}`);
+                }
+
+                await new Promise(r => setTimeout(r, 500));
+            }
+
+            const finalMemories = [...(char.memories || []), ...newMemories];
+            updateCharacter(char.id, { memories: finalMemories });
+            
+            if (processedCount > 0) {
+                addToast(`成功归档 ${processedCount} 天的记忆`, 'success');
+            } else {
+                addToast('归档完成，但没有生成有效内容', 'info');
+            }
+
+        } catch (e: any) {
+            addToast(`归档中断: ${e.message}`, 'error');
+        } finally {
+            setIsSummarizing(false);
+        }
+    };
+
+    const handleSendText = async (customContent?: string, customType?: MessageType, metadata?: any) => {
+        if (!char || (!input.trim() && !customContent)) return;
+        const text = customContent || input.trim();
+        const type = customType || 'text';
+
+        if (!customContent) { setInput(''); localStorage.removeItem(draftKey); }
+        
+        if (type === 'image') {
+            await DB.saveGalleryImage({
+                id: `img-${Date.now()}-${Math.random()}`,
+                charId: char.id,
+                url: text,
+                timestamp: Date.now()
+            });
+            addToast('图片已保存至相册', 'info');
+        }
+
+        await DB.saveMessage({ charId: char.id, role: 'user', type, content: text, metadata });
+        const updatedMsgs = await DB.getMessagesByCharId(char.id);
+        setMessages(updatedMsgs);
+        setShowPanel('none');
+        
+       
+    };
+
+    const handleBgUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
+        const file = e.target.files?.[0];
+        if(!file) return;
+        try {
+            const dataUrl = await processImage(file);
+            updateCharacter(char.id, { chatBackground: dataUrl });
+            addToast('聊天背景已更新', 'success');
+        } catch(err: any) {
+            addToast(err.message, 'error');
+        }
+    };
+
+    const saveSettings = () => {
+        updateCharacter(char.id, { contextLimit: settingsContextLimit });
+        setModalType('none');
+        addToast('设置已保存', 'success');
+    };
 
     const handleMessageLongPress = useCallback((m: Message) => {
         setSelectedMessage(m);
@@ -1146,10 +1149,10 @@ ${rawLog.substring(0, 8000)}`;
                     <div className="bg-slate-50 h-72 border-t border-slate-200/60 overflow-y-auto no-scrollbar relative z-0">
                          {showPanel === 'actions' && (
                              <div className="p-6 grid grid-cols-4 gap-8">
-                                <button onClick={() => setModalType('transfer')} className="flex flex-col items-center gap-2 text-slate-600 active:scale-95 transition-transform"><div className="w-14 h-14 bg-orange-50 rounded-2xl flex items-center justify-center shadow-sm text-orange-400 border border-orange-100"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6"><path d="M12 7.5a2.25 2.25 0 1 0 0 4.5 2.25 2.25 0 0 0 0-4.5Z" /><path fillRule="evenodd" d="M1.5 4.875C1.5 3.839 2.34 3 3.375 3h17.25c1.035 0 1.875.84 1.875 1.875v9.75c0 1.036-.84 1.875-1.875 1.875H3.375A1.875 1.875 0 0 1 1.5 14.625v-9.75ZM8.25 9.75a3.75 3.75 0 1 1 7.5 0 3.75 3.75 0 0 1-7.5 0ZM18.75 9a.75.75 0 0 0-.75.75v.008c0 .414.336.75.75.75h.008a.75.75 0 0 0 .75-.75V9.75a.75.75 0 0 0-.75-.75h-.008ZM4.5 9.75A.75.75 0 0 1 5.25 9h.008a.75.75 0 0 1 .75.75v.008a.75.75 0 0 1-.75.75H5.25a.75.75 0 0 1-.75-.75V9.75Z" clipRule="evenodd" /><path d="M2.25 18a.75.75 0 0 0 0 1.5c5.4 0 10.63.722 15.6 2.075 1.19.324 2.4-.558 2.4-1.82V18.75a.75.75 0 0 0-.75-.75H2.25Z" /></svg></div><span className="text-xs font-bold">转账</span></button>
+                                <button onClick={() => setModalType('transfer')} className="flex flex-col items-center gap-2 text-slate-600 active:scale-95 transition-transform"><div className="w-14 h-14 bg-orange-50 rounded-2xl flex items-center justify-center shadow-sm text-orange-400 border border-orange-100"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6"><path d="M12 7.5a2.25 2.25 0 1 0 0 4.5 2.25 2.25 0 0 0 0-4.5Z" /><path fillRule="evenodd" d="M1.5 4.875C1.5 3.839 2.34 3 3.375 3h17.25c1.035 0 1.875.84 1.875 1.875v9.75c0 1.036-.84 1.875-1.875 1.875H3.375A1.875 1.875 0 0 1 1.5 14.625v-9.75ZM8.25 9.75a3.75 3.75 0 1 1 7.5 0 3.75 3.75 0 0 1-7.5 0ZM18.75 9a.75.75 0 0 0-.75.75v.008c0 .414.336.75.75.75h.008a.75.75 0 0 0 .75-.75V9.75a.75.75 0 0 0-.75-.75h-.008ZM4.5 9.75A.75.75 0 0 1 5.25 9h.008a.75.75 0 0 1 .75.75v.008a.75.75 0 0 1-.75-.75H5.25a.75.75 0 0 1-.75-.75V9.75Z" clipRule="evenodd" /><path d="M2.25 18a.75.75 0 0 0 0 1.5c5.4 0 10.63.722 15.6 2.075 1.19.324 2.4-.558 2.4-1.82V18.75a.75.75 0 0 0-.75-.75H2.25Z" /></svg></div><span className="text-xs font-bold">转账</span></button>
                                 <button onClick={() => handleSendText('[戳一戳]', 'interaction')} className="flex flex-col items-center gap-2 text-slate-600 active:scale-95 transition-transform"><div className="w-14 h-14 bg-sky-50 rounded-2xl flex items-center justify-center shadow-sm text-2xl border border-sky-100">👉</div><span className="text-xs font-bold">戳一戳</span></button>
                                 <button onClick={handleFullArchive} className="flex flex-col items-center gap-2 text-slate-600 active:scale-95 transition-transform"><div className="w-14 h-14 bg-indigo-50 rounded-2xl flex items-center justify-center shadow-sm text-indigo-400 border border-indigo-100"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6"><path strokeLinecap="round" strokeLinejoin="round" d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25" /></svg></div><span className="text-xs font-bold">{isSummarizing ? '归档中...' : '记忆归档'}</span></button>
-                                <button onClick={() => setModalType('chat-settings')} className="flex flex-col items-center gap-2 text-slate-600 active:scale-95 transition-transform"><div className="w-14 h-14 bg-slate-50 rounded-2xl flex items-center justify-center shadow-sm text-slate-500 border border-slate-100"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6"><path strokeLinecap="round" strokeLinejoin="round" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" /><path strokeLinecap="round" strokeLinejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" /></svg></div><span className="text-xs font-bold">设置</span></button>
+                                <button onClick={() => setModalType('chat-settings')} className="flex flex-col items-center gap-2 text-slate-600 active:scale-95 transition-transform"><div className="w-14 h-14 bg-slate-50 rounded-2xl flex items-center justify-center shadow-sm text-slate-500 border border-slate-100"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6"><path strokeLinecap="round" strokeLinejoin="round" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37.996.608 2.296.07 2.572-1.065z" /><path strokeLinecap="round" strokeLinejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" /></svg></div><span className="text-xs font-bold">设置</span></button>
                                 
                                 <button onClick={() => chatImageInputRef.current?.click()} className="flex flex-col items-center gap-2 text-slate-600 active:scale-95 transition-transform">
                                     <div className="w-14 h-14 bg-pink-50 rounded-2xl flex items-center justify-center shadow-sm text-pink-400 border border-pink-100">
