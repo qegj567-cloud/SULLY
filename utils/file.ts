@@ -1,5 +1,5 @@
 
-export const processImage = (file: File): Promise<string> => {
+export const processImage = (file: File, options?: { maxWidth?: number, quality?: number, forceJpeg?: boolean }): Promise<string> => {
     return new Promise((resolve, reject) => {
         // 简单验证
         if (!file.type.startsWith('image/')) {
@@ -26,9 +26,11 @@ export const processImage = (file: File): Promise<string> => {
             const img = new Image();
             img.src = event.target?.result as string;
             img.onload = () => {
-                // 压缩逻辑 (稍微提高上限以适应立绘)
-                const MAX_WIDTH = 1200; 
-                const MAX_HEIGHT = 1200;
+                // 压缩逻辑
+                // 默认 1200 (高画质)，如果传入 options 则使用传入值 (如 Chat 中传 600)
+                const MAX_WIDTH = options?.maxWidth || 1200; 
+                const MAX_HEIGHT = MAX_WIDTH; // 保持比例限制
+                
                 let width = img.width;
                 let height = img.height;
 
@@ -57,14 +59,19 @@ export const processImage = (file: File): Promise<string> => {
                 ctx.clearRect(0, 0, width, height);
                 ctx.drawImage(img, 0, 0, width, height);
                 
-                // 智能格式选择: 如果原图是PNG/WebP，保持格式以保留透明通道
-                // 否则转为 JPEG 0.85 质量
+                // 智能格式选择: 
+                // 1. 如果 forceJpeg 为 true (如聊天发送图)，强制转 JPEG 以节省体积
+                // 2. 否则如果原图是 PNG/WebP，保持格式以保留透明通道 (如立绘、贴纸)
+                // 3. 默认 JPEG
                 let mimeType = 'image/jpeg';
-                if (file.type === 'image/png' || file.type === 'image/webp') {
+                if (!options?.forceJpeg && (file.type === 'image/png' || file.type === 'image/webp')) {
                     mimeType = file.type;
                 }
                 
-                const dataUrl = canvas.toDataURL(mimeType, 0.85);
+                // 质量控制: 默认 0.85，传入值优先
+                const quality = options?.quality || 0.85;
+                
+                const dataUrl = canvas.toDataURL(mimeType, quality);
                 resolve(dataUrl);
             };
             img.onerror = (err) => reject(new Error('图片加载失败'));

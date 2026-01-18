@@ -170,6 +170,7 @@ export interface ChatTheme {
     type: 'preset' | 'custom';
     user: BubbleStyle;
     ai: BubbleStyle;
+    customCss?: string; // New: Raw CSS for advanced customization
 }
 
 export interface Toast {
