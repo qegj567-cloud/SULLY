@@ -118,11 +118,12 @@ const ThemeMaker: React.FC = () => {
         const isUser = role === 'user';
         const isActive = activeTab === role || activeTab === 'css';
         
-        // Container style
+        // Container style logic to mimic Chat.tsx
         const containerStyle = {
             backgroundColor: style.backgroundColor,
             borderRadius: `${style.borderRadius}px`,
             opacity: style.opacity,
+            // Simulate "FirstInGroup" border radius logic for a nicer preview look
             borderBottomLeftRadius: isUser ? `${style.borderRadius}px` : '4px',
             borderBottomRightRadius: isUser ? '4px' : `${style.borderRadius}px`,
             borderTopLeftRadius: `${style.borderRadius}px`,
@@ -131,10 +132,10 @@ const ThemeMaker: React.FC = () => {
 
         return (
             <div 
-                className={`relative w-full flex items-end gap-3 transition-opacity duration-300 cursor-pointer ${
+                className={`relative w-full flex items-end gap-3 transition-all duration-300 cursor-pointer ${
                     isUser ? 'flex-row-reverse' : 'flex-row'
-                } ${isActive ? 'opacity-100' : 'opacity-60 grayscale-[0.3] hover:opacity-80'}`}
-                onClick={() => setActiveTab(role)} // Click bubble to switch tab
+                } ${isActive ? 'opacity-100 scale-100' : 'opacity-60 scale-95 grayscale-[0.5] hover:opacity-80'}`}
+                onClick={() => setActiveTab(role)}
                 title={`点击编辑${isUser ? '用户' : '角色'}气泡`}
             >
                 {/* Avatar */}

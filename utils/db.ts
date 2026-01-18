@@ -1,9 +1,11 @@
 
+
+
 import { CharacterProfile, Message, ChatTheme, FullBackupData, GalleryImage, UserProfile, DiaryEntry, Task, Anniversary } from '../types';
 
 const DB_NAME = 'AetherOS_Data';
 // CRITICAL FIX: Increment version to force `onupgradeneeded` on devices that have an old schema
-const DB_VERSION = 14; 
+const DB_VERSION = 15; 
 
 const STORE_CHARACTERS = 'characters';
 const STORE_MESSAGES = 'messages';
