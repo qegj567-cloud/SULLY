@@ -1,13 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0, viewport-fit=cover" />
     <title>手抓糯米机</title>
     
-    <!-- PWA Settings -->
-    <link rel="manifest" href="./manifest.json" />
-    <meta name="theme-color" content="#0f1115" />
+    <link rel="manifest" href="manifest.json" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
     <meta name="apple-mobile-web-app-title" content="手抓糯米机" />
@@ -15,85 +13,27 @@
 
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            fontFamily: {
-              sans: ['Quicksand', 'sans-serif'],
-            },
-            colors: {
-              primary: 'hsl(var(--primary-hue), var(--primary-sat), var(--primary-lightness))', 
-              'primary-focus': 'hsl(var(--primary-hue), var(--primary-sat), calc(var(--primary-lightness) - 10%))',
-              'primary-light': 'hsl(var(--primary-hue), var(--primary-sat), 92%)',
-              surface: 'rgba(255, 255, 255, 0.75)',
-              'surface-glass': 'rgba(255, 255, 255, 0.35)',
-            },
-            animation: {
-              'fade-in': 'fadeIn 0.3s ease-in-out',
-            },
-            keyframes: {
-              fadeIn: {
-                '0%': { opacity: '0', transform: 'scale(0.98)' },
-                '100%': { opacity: '1', transform: 'scale(1)' },
-              }
-            }
-          }
-        }
+    <script type="importmap">
+    {
+      "imports": {
+        "react": "https://esm.sh/react@^19.2.3",
+        "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+        "@capacitor/core": "https://esm.sh/@capacitor/core@^8.0.0"
       }
+    }
     </script>
     <style>
-      :root {
-        --primary-hue: 245; 
-        --primary-sat: 25%;
-        --primary-lightness: 65%;
-        --safe-area-bottom: env(safe-area-inset-bottom);
-      }
       body {
         background-color: #0f1115;
         margin: 0;
         overflow: hidden;
         overscroll-behavior: none;
-        /* Prevent text selection to feel like an app */
-        user-select: none;
         -webkit-user-select: none;
       }
-      /* Re-enable selection for inputs */
-      input, textarea {
-        user-select: text;
-        -webkit-user-select: text;
-      }
-      .no-scrollbar::-webkit-scrollbar {
-        display: none;
-      }
-      .no-scrollbar {
-        -ms-overflow-style: none;
-        scrollbar-width: none;
-      }
-      input:focus, textarea:focus, select:focus {
-        outline: none;
-      }
     </style>
-  <script type="importmap">
-{
-  "imports": {
-    "react": "https://esm.sh/react@^19.2.3",
-    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
-    "react/": "https://esm.sh/react@^19.2.3/",
-    "vite": "https://esm.sh/vite@^7.3.0",
-    "@vitejs/plugin-react": "https://esm.sh/@vitejs/plugin-react@^5.1.2",
-    "@capacitor/app": "https://esm.sh/@capacitor/app@^8.0.0",
-    "@capacitor/status-bar": "https://esm.sh/@capacitor/status-bar@^8.0.0",
-    "@capacitor/core": "https://esm.sh/@capacitor/core@^8.0.0",
-    "@capacitor/share": "https://esm.sh/@capacitor/share@^8.0.0",
-    "@capacitor/filesystem": "https://esm.sh/@capacitor/filesystem@^8.0.0",
-    "@capacitor/local-notifications": "https://esm.sh/@capacitor/local-notifications@^6.0.0"
-  }
-}
-</script>
-</head>
+  </head>
   <body>
     <div id="root"></div>
-    <script type="module" src="/index.tsx"></script>
+    <script type="module" src="index.tsx"></script>
   </body>
 </html>
